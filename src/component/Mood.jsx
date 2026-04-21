@@ -1,5 +1,6 @@
 import { MoonIcon, SunIcon } from "lucide-react";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 
 export default function Navbar() {
   const [dark, setDark] = useState(false);
@@ -7,6 +8,8 @@ export default function Navbar() {
   const menuRef = useRef(null);
   const lastFocusedElementRef = useRef(null);
 
+  const { theme, toggleTheme } = useContext(ThemeContext);
+const isDark = theme === "dark";
   const openMenu = () => {
     lastFocusedElementRef.current = document.activeElement;
     setIsMenuOpen(true);
@@ -144,14 +147,14 @@ export default function Navbar() {
         </div>
 
         <div>
-          {dark ? (
+          {isDark ? (
             <SunIcon
-              onClick={(e) => setDark(false)}
+              onClick={(e) => toggleTheme()}
               className="text-yellow-400"
             />
           ) : (
             <MoonIcon
-              onClick={(e) => setDark(true)}
+              onClick={(e) => toggleTheme()}
               className=" text-blue-500"
             />
           )}
