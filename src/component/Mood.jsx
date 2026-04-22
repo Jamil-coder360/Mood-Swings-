@@ -54,17 +54,17 @@ const isDark = theme === "dark";
     },
     {
       id:2,
-      name:"Home",
+      name:" Blog",
       path:"/home"
     },
     {
       id:3,
-      name:"Home",
+      name:" Features",
       path:"/home"
     },
     {
       id:4,
-      name:"Home",
+      name:"   About",
       path:"/home"
     },
     {
@@ -86,9 +86,9 @@ const isDark = theme === "dark";
         >
           <span className="sr-only">Your Company</span>
           <img
-            src="./shadepro.png"
+            src="./logo.png"
             alt="logo"
-            className="h-9 w-auto"
+            className="h-15 w-auto"
           />
         </a>
 
@@ -105,7 +105,7 @@ const isDark = theme === "dark";
             >
               <span className="sr-only">Your Company</span>
               <img
-                src="./shadepro.png"
+                src="./logo.png"
                 alt="logo"
                 className="h-9 w-auto"
               />
@@ -132,51 +132,8 @@ const isDark = theme === "dark";
             </button>
           </div>
 
-          <ul className="flex flex-col gap-8 font-semibold text-sm text-slate-900 lg:flex-row max-lg:p-6">
-            <li>
-              <a
-                href="#"
-                className="hover:text-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
-                aria-current="page"
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="hover:text-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
-              >
-                Features
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="hover:text-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
-              >
-                Blog
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="hover:text-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
-              >
-                About
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="hover:text-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
-              >
-                Contact
-              </a>
-            </li>
-          </ul>
 
-          {/*      <ul className="flex flex-col gap-8 font-semibold text-sm text-slate-900 lg:flex-row max-lg:p-6">
+               <ul className="flex flex-col gap-8 font-semibold text-sm text-slate-900 lg:flex-row max-lg:p-6">
             {manuItem.map((item)=>
                <li key={item.id}>
               <a
@@ -189,7 +146,7 @@ const isDark = theme === "dark";
             </li>
             )}
            
-          </ul> */}
+          </ul>
         </div>
 
         <div>
