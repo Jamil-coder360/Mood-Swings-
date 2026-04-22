@@ -1,8 +1,10 @@
 import { MoonIcon, SunIcon } from "lucide-react";
-import { useState, useEffect, useRef, useContext } from "react";
+import { useState, useEffect, useRef, useContext, } from "react";
 import { ThemeContext } from "../context/ThemeContext";
-
+// import Link from "react"
 export default function Navbar() {
+
+  // const {theme , toggleTheme} =useContext(ThemeContext);
   const [dark, setDark] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null);
@@ -43,9 +45,38 @@ const isDark = theme === "dark";
     };
   }, [isMenuOpen]);
 
+
+  const manuItem = [
+    {
+      id:1,
+      name:"Home",
+      path:"/home"
+    },
+    {
+      id:2,
+      name:"Home",
+      path:"/home"
+    },
+    {
+      id:3,
+      name:"Home",
+      path:"/home"
+    },
+    {
+      id:4,
+      name:"Home",
+      path:"/home"
+    },
+    {
+      id:5,
+      name:"   Contact",
+      path:"/home"
+    },
+
+  ];
   return (
     <nav
-      className="flex py-2 px-4 md:px-8 bg-white border-b border-slate-300 min-h-[68px] relative z-20"
+      className="flex py-2 px-4 md:px-8 dark:bg-black dark:text-white  bg-white border-b border-slate-300 min-h-[68px] relative z-20"
       aria-label="Main navigation"
     >
       <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4 w-full">
@@ -144,20 +175,37 @@ const isDark = theme === "dark";
               </a>
             </li>
           </ul>
+
+          {/*      <ul className="flex flex-col gap-8 font-semibold text-sm text-slate-900 lg:flex-row max-lg:p-6">
+            {manuItem.map((item)=>
+               <li key={item.id}>
+              <a
+                href={item.path}
+                className="hover:text-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+                aria-current="page"
+              >
+                {item.name}
+              </a>
+            </li>
+            )}
+           
+          </ul> */}
         </div>
 
         <div>
-          {isDark ? (
+           
             <SunIcon
-              onClick={(e) => toggleTheme()}
-              className="text-yellow-400"
+            onClick={toggleTheme}
+              // onClick={()=> setDark("true")}
+              className={`text-yellow-400 ${theme == "dark" ? "hidden" : "block" } `}
             />
-          ) : (
+          
             <MoonIcon
-              onClick={(e) => toggleTheme()}
-              className=" text-blue-500"
+            onClick={toggleTheme}
+              // onClick={()=> setDark("false")}
+              className={ `text-blue-500  ${theme == "light" ? "hidden" : "block"} `}
             />
-          )}
+          
         </div>
 
         <div className="flex items-center gap-4">

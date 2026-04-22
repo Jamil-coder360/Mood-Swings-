@@ -1,1 +1,13 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+.dark ul,
+.dark li,
+.dark ol {
+  color: white;
+}
+
+.dark a {
+  color: #ffffff;
+}

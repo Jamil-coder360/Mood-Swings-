@@ -6,7 +6,10 @@ const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState("light");
 
   const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+     //here depend on the previous state to toggle theme 
+     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+     // setTheme (theme === "light" ? "dark" : "light"); --- IGNORE For Multiple Theme ---
+    document.documentElement.classList.toggle("dark")
   };
 
   return (
